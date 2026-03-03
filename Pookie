@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday My Love ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    background: linear-gradient(to bottom right, #ffd6ec, #ffe6f7);
+    overflow-x: hidden;
+}
+
+h1 {
+    margin-top: 80px;
+    font-size: 3em;
+    color: #ff4da6;
+}
+
+p {
+    font-size: 1.3em;
+    color: #444;
+    padding: 0 20px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 30px;
+    background-color: #ff4da6;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #ff1a8c;
+}
+
+#surprise {
+    display: none;
+    margin-top: 30px;
+    font-size: 1.4em;
+    color: #ff0066;
+}
+
+.countdown {
+    font-size: 1.5em;
+    margin-top: 20px;
+    color: #cc0066;
+}
+
+/* Floating Hearts */
+.heart {
+    position: fixed;
+    bottom: -10px;
+    font-size: 20px;
+    animation: float 6s linear infinite;
+}
+
+@keyframes float {
+    0% {transform: translateY(0); opacity:1;}
+    100% {transform: translateY(-100vh); opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<h1>Happy Birthday My Beautiful ❤️</h1>
+
+<p>You make my world brighter every single day.  
+Today is all about celebrating YOU 🎉</p>
+
+<div class="countdown" id="countdown"></div>
+
+<button onclick="showSurprise()">Click for Your Surprise 💌</button>
+
+<div id="surprise">
+    You are my favorite person, my best friend, and my forever love.  
+    I am so lucky to have you.  
+    I promise to always make you smile 😊❤️
+</div>
+
+<!-- Background Music -->
+<audio autoplay loop>
+  <source src="YOUR-MUSIC-LINK-HERE.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+// Countdown (Change date below)
+var birthday = new Date("July 20, 2026 00:00:00").getTime();
+
+var x = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = birthday - now;
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    document.getElementById("countdown").innerHTML =
+        "Countdown to your special day: " + days + " days ❤️";
+
+}, 1000);
+
+// Show surprise message
+function showSurprise() {
+    document.getElementById("surprise").style.display = "block";
+}
+
+// Floating hearts
+setInterval(function(){
+    var heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(function(){
+        heart.remove();
+    }, 6000);
+}, 500);
+</script>
+
+</body>
+</html>
